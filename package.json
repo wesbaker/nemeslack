@@ -1,0 +1,18 @@
+{
+  "name": "nemeslack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Wes Baker <wes@wesbaker.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@slack/client": "^3.10.0",
+    "axios": "^0.16.2",
+    "dotenv": "^4.0.0",
+    "moment": "^2.18.1",
+    "xml2js": "^0.4.17",
+    "xmldoc": "^1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0"
+  }
+}
