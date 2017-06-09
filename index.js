@@ -58,8 +58,8 @@ axios
   .get("https://nemestats.com/api/v2/PlayedGames/", {
     params: {
       gamingGroupId: 13468,
-      datePlayedFrom: "2017-05-01",
-      datePlayedTo: "2017-06-08"
+      datePlayedFrom: moment().subtract(1, 'days').format('YYYY-MM-DD'),
+      datePlayedTo: moment().subtract(1, 'days').format('YYYY-MM-DD')
     }
   })
   .then(({ data: { playedGames } }) => {
