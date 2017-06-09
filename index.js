@@ -2,7 +2,6 @@ require("dotenv").config();
 
 const IncomingWebhook = require("@slack/client").IncomingWebhook;
 const axios = require("axios");
-const parseXML = require("xml2js").parseString;
 const xmldoc = require("xmldoc");
 const moment = require("moment");
 
@@ -58,8 +57,8 @@ axios
   .get("https://nemestats.com/api/v2/PlayedGames/", {
     params: {
       gamingGroupId: process.env.GAMING_GROUP_ID,
-      datePlayedFrom: moment().subtract(1, 'days').format('YYYY-MM-DD'),
-      datePlayedTo: moment().subtract(1, 'days').format('YYYY-MM-DD')
+      datePlayedFrom: moment().subtract(1, "days").format("YYYY-MM-DD"),
+      datePlayedTo: moment().subtract(1, "days").format("YYYY-MM-DD")
     }
   })
   .then(({ data: { playedGames } }) => {
