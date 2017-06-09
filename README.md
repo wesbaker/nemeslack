@@ -8,7 +8,7 @@ A simple way to send [Nemestats][nemestats] plays to Slack:
 
 At the moment you'll need your own instance for your Slack. I run mine on Heroku (for free) and it works really well.
 
-1. Create [a new Slack app](https://api.slack.com/apps?new_app=1))
+1. Create [a new Slack app](https://api.slack.com/apps?new_app=1)
 2. Enable Incoming Webhooks
 3. Create a Webhook URL for the desired channel and team
 4. Create a new app over at [Heroku](https://dashboard.heroku.com/new-app?org=personal-apps)
