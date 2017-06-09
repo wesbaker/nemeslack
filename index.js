@@ -57,7 +57,7 @@ const createAttachment = (play, thumbUrl) => {
 axios
   .get("https://nemestats.com/api/v2/PlayedGames/", {
     params: {
-      gamingGroupId: 13468,
+      gamingGroupId: process.env.GAMING_GROUP_ID,
       datePlayedFrom: moment().subtract(1, 'days').format('YYYY-MM-DD'),
       datePlayedTo: moment().subtract(1, 'days').format('YYYY-MM-DD')
     }
