@@ -1,5 +1,10 @@
 # Nemeslack
 
+[![Travis](https://img.shields.io/travis/wesbaker/nemeslack.svg)](https://travis-ci.org/wesbaker/nemeslack)
+[![Coverage Status](https://coveralls.io/repos/github/wesbaker/nemeslack/badge.svg?branch=master)](https://coveralls.io/github/wesbaker/nemeslack?branch=master)
+[![Code Climate](https://codeclimate.com/github/wesbaker/nemeslack/badges/gpa.svg)](https://codeclimate.com/github/wesbaker/nemeslack)
+
+
 A simple way to send [Nemestats][nemestats] plays to Slack:
 
 ![Example Nemeslack](example.png)
