@@ -12,9 +12,19 @@
     "xmldoc": "^1.1.0"
   },
   "devDependencies": {
-    "eslint": "^3.19.0"
+    "coveralls": "^2.13.1",
+    "eslint": "^3.19.0",
+    "eslint-plugin-jest": "^20.0.3",
+    "jest": "^20.0.4",
+    "lodash": "^4.17.4",
+    "moxios": "^0.4.0"
   },
   "engines": {
     "node": "8.x"
+  },
+  "scripts": {
+    "post": "node index.js",
+    "test": "jest --coverage",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   }
 }
