@@ -9,7 +9,6 @@
     "axios": "^0.16.2",
     "dotenv": "^4.0.0",
     "moment": "^2.18.1",
-    "xml2js": "^0.4.17",
     "xmldoc": "^1.1.0"
   },
   "devDependencies": {
