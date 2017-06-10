@@ -1,10 +1,13 @@
+// @flow
+
 const moment = require("moment");
 const xmldoc = require("xmldoc");
 const axios = require("axios");
 
-const getUrl = gameId => `https://nemestats.com/PlayedGame/Details/${gameId}`;
+const getUrl = (gameId: number) =>
+  `https://nemestats.com/PlayedGame/Details/${gameId}`;
 
-const createPlayers = players => {
+const createPlayers = (players: Array<Object>) => {
   // Check to make sure _someone_ scored points
   const points = players.some(
     player => player.pointsScored !== null && player.pointsScored !== 0
@@ -20,7 +23,7 @@ const createPlayers = players => {
   return { title: "Players", value: names.join(", "), short: true };
 };
 
-const getThumbnail = bggId => {
+const getThumbnail = (bggId: number) => {
   return axios
     .get("https://www.boardgamegeek.com/xmlapi2/thing", {
       params: { id: bggId }
@@ -32,7 +35,7 @@ const getThumbnail = bggId => {
     .catch(err => console.error(err));
 };
 
-const createAttachment = (play, thumbUrl) => {
+const createAttachment = (play: Object, thumbUrl: string) => {
   const date = moment(play.datePlayed).format("dddd, MMMM Do YYYY");
   return [
     {
@@ -47,7 +50,7 @@ const createAttachment = (play, thumbUrl) => {
   ];
 };
 
-const getAttachments = playData => {
+const getAttachments = (playData: Object) => {
   return getThumbnail(playData.boardGameGeekGameDefinitionId).then(thumbUrl => {
     return createAttachment(playData, thumbUrl);
   });

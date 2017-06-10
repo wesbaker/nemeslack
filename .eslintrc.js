@@ -4,8 +4,13 @@ module.exports = {
     node: true,
     "jest/globals": true
   },
-  plugins: ["jest"],
-  extends: ["eslint:recommended", "plugin:jest/recommended"],
+  plugins: ["jest", "flowtype"],
+  extends: [
+    "eslint:recommended",
+    "plugin:jest/recommended",
+    "plugin:flowtype/recommended"
+  ],
+  parser: "babel-eslint",
   parserOptions: {
     sourceType: "module"
   },

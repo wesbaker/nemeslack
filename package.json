@@ -12,9 +12,14 @@
     "xmldoc": "^1.1.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-flow": "^6.23.0",
     "coveralls": "^2.13.1",
     "eslint": "^3.19.0",
+    "eslint-plugin-flowtype": "^2.34.0",
     "eslint-plugin-jest": "^20.0.3",
+    "flow-bin": "^0.47.0",
     "jest": "^20.0.4",
     "lodash": "^4.17.4",
     "moxios": "^0.4.0"
@@ -23,8 +28,13 @@
     "node": "8.x"
   },
   "scripts": {
-    "post": "node index.js",
+    "post": "yarn run build; node lib/index.js",
     "test": "jest --coverage",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "build": "babel src/ -d lib/",
+    "flow": "flow"
+  },
+  "jest": {
+    "testPathIgnorePatterns": ["<rootDir>/lib"]
   }
 }
