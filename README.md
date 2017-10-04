@@ -23,6 +23,6 @@ At the moment you'll need your own instance for your Slack. I run mine on Heroku
 6. Clone this repository and then [deploy it to Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#deploy-the-app)
 7. Schedule a run of the app so the games get posted
     - Open the scheduler: `heroku addons:open scheduler`
-    - Add a new job specifying a daily run at the time you want running `yarn run post`
+    - Add a new job specifying a daily run at the time you want running `npm run post`
 
 [nemestats]: https://nemestats.com

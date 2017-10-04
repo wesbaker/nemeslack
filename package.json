@@ -1,26 +1,26 @@
 {
   "name": "nemeslack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "author": "Wes Baker <wes@wesbaker.com>",
   "license": "MIT",
   "dependencies": {
-    "@slack/client": "^3.10.0",
+    "@slack/client": "^3.14.0",
     "axios": "^0.16.2",
-    "babel-cli": "^6.24.1",
-    "babel-eslint": "^7.2.3",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.1",
     "babel-preset-flow": "^6.23.0",
     "dotenv": "^4.0.0",
     "moment": "^2.18.1",
     "xmldoc": "^1.1.0"
   },
   "devDependencies": {
-    "coveralls": "^2.13.1",
-    "eslint": "^3.19.0",
-    "eslint-plugin-flowtype": "^2.34.0",
-    "eslint-plugin-jest": "^20.0.3",
-    "flow-bin": "^0.47.0",
-    "jest": "^20.0.4",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.8.0",
+    "eslint-plugin-flowtype": "^2.37.0",
+    "eslint-plugin-jest": "^21.2.0",
+    "flow-bin": "^0.56.0",
+    "jest": "^21.2.1",
     "lodash": "^4.17.4",
     "moxios": "^0.4.0"
   },
@@ -37,6 +37,8 @@
     "flow": "flow"
   },
   "jest": {
-    "testPathIgnorePatterns": ["<rootDir>/lib"]
+    "testPathIgnorePatterns": [
+      "<rootDir>/lib"
+    ]
   }
 }
