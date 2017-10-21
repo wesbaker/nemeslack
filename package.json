@@ -28,10 +28,10 @@
     "node": "8.x"
   },
   "scripts": {
-    "post": "yarn run build; node lib/index.js",
+    "post": "npm run build; node lib/index.js",
     "lint": "eslint ./src/",
     "jest": "jest --coverage",
-    "test": "yarn run lint; yarn run jest",
+    "test": "npm run lint; npm run jest",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "build": "babel src/ -d lib/",
     "flow": "flow"
