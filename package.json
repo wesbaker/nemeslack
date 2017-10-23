@@ -28,10 +28,10 @@
     "node": "8.x"
   },
   "scripts": {
-    "post": "node lib/index.js",
+    "post": "node index.js",
     "lint": "eslint ./src/",
     "jest": "jest --coverage",
-    "test": "node lib/index.js --test; npm run lint; npm run jest",
+    "test": "node index.js --test; npm run lint; npm run jest",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   }
 }
