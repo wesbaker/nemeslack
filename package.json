@@ -28,7 +28,7 @@
     "node": "8.x"
   },
   "scripts": {
-    "post": "npm run build; node lib/index.js",
+    "post": "node lib/index.js",
     "lint": "eslint ./src/",
     "jest": "jest --coverage",
     "test": "node lib/index.js --test; npm run lint; npm run jest",
