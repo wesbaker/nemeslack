@@ -11,4 +11,3 @@ ratings:
     - "**.js"
 exclude_paths:
 - "**/__tests__/**"
-- "lib/"

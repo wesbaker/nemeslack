@@ -5,7 +5,7 @@ const axios = require("axios");
 const moment = require("moment");
 const url = process.env.SLACK_WEBHOOK_URL || "";
 const webhook = new IncomingWebhook(url);
-const getAttachments = require("./Play").getAttachments;
+const getAttachments = require("./lib/Play").getAttachments;
 
 axios
   .get("https://nemestats.com/api/v2/PlayedGames/", {
