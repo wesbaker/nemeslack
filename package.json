@@ -1,14 +1,16 @@
 {
   "name": "nemeslack",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "index.js",
   "author": "Wes Baker <wes@wesbaker.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wesbaker/nemeslack"
+  },
   "dependencies": {
     "@slack/client": "^3.14.1",
     "axios": "^0.17.0",
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.0.1",
     "dotenv": "^4.0.0",
     "moment": "^2.19.1",
     "xmldoc": "^1.1.0"
@@ -18,6 +20,7 @@
     "eslint": "^4.9.0",
     "eslint-plugin-jest": "^21.2.0",
     "jest": "^21.2.1",
+    "jest-cli": "^21.2.1",
     "lodash": "^4.17.4",
     "moxios": "^0.4.0"
   },
@@ -28,13 +31,7 @@
     "post": "npm run build; node lib/index.js",
     "lint": "eslint ./src/",
     "jest": "jest --coverage",
-    "test": "npm run lint; npm run jest",
-    "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "build": "babel src/ -d lib/"
-  },
-  "jest": {
-    "testPathIgnorePatterns": [
-      "<rootDir>/lib"
-    ]
+    "test": "node lib/index.js --test; npm run lint; npm run jest",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   }
 }
