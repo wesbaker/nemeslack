@@ -13,6 +13,7 @@
     "axios": "^0.18.0",
     "dotenv": "^5.0.1",
     "moment": "^2.20.1",
+    "raven": "^2.4.2",
     "xmldoc": "^1.1.0"
   },
   "devDependencies": {

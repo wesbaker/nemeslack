@@ -20,6 +20,9 @@ if (testRun) {
   process.exit(0);
 }
 
+const Raven = require("raven");
+Raven.config(process.env.SENTRY_DSN);
+
 const url = process.env.SLACK_WEBHOOK_URL;
 const webhook = new IncomingWebhook(url);
 
