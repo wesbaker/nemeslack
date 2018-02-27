@@ -3,13 +3,11 @@ require("dotenv").config();
 const IncomingWebhook = require("@slack/client").IncomingWebhook;
 const axios = require("axios");
 const moment = require("moment");
-const url = process.env.SLACK_WEBHOOK_URL || "";
-const webhook = new IncomingWebhook(url);
 const getAttachments = require("./lib/Play").getAttachments;
 
 const testRun = process.argv.includes("--test");
 if (testRun) {
-  if (typeof webhook !== "object") {
+  if (typeof IncomingWebhook !== "function") {
     console.error("@slack/client was not loaded.");
   }
   if (typeof axios !== "function") {
@@ -21,6 +19,9 @@ if (testRun) {
   console.log("Debug: Nemeslack would post now.");
   process.exit(0);
 }
+
+const url = process.env.SLACK_WEBHOOK_URL;
+const webhook = new IncomingWebhook(url);
 
 axios
   .get("https://nemestats.com/api/v2/PlayedGames/", {
