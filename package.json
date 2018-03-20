@@ -9,17 +9,17 @@
     "url": "https://github.com/wesbaker/nemeslack"
   },
   "dependencies": {
-    "@slack/client": "^3.16.0",
+    "@slack/client": "^4.0.1",
     "axios": "^0.18.0",
     "dotenv": "^5.0.1",
-    "moment": "^2.20.1",
+    "moment": "^2.21.0",
     "raven": "^2.4.2",
     "xmldoc": "^1.1.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
-    "eslint": "^4.18.1",
-    "eslint-plugin-jest": "^21.12.2",
+    "eslint": "^4.19.0",
+    "eslint-plugin-jest": "^21.15.0",
     "jest": "^22.4.2",
     "jest-cli": "^22.4.2",
     "lodash": "^4.17.5",
