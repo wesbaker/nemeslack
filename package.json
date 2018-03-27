@@ -17,13 +17,13 @@
     "xmldoc": "^1.1.0"
   },
   "devDependencies": {
-    "coveralls": "^3.0.0",
-    "eslint": "^4.19.0",
-    "eslint-plugin-jest": "^21.15.0",
-    "jest": "^22.4.2",
-    "jest-cli": "^22.4.2",
-    "lodash": "^4.17.5",
-    "moxios": "^0.4.0"
+    "coveralls": "3.0.0",
+    "eslint": "4.19.0",
+    "eslint-plugin-jest": "21.15.0",
+    "jest": "22.4.2",
+    "jest-cli": "22.4.2",
+    "lodash": "4.17.5",
+    "moxios": "0.4.0"
   },
   "engines": {
     "node": "8.x"
