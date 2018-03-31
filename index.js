@@ -41,10 +41,12 @@ axios
   .then(({ data: { playedGames } }) => {
     playedGames.forEach(playData => {
       getAttachments(playData).then(attachments => {
-        webhook.send({ attachments });
+        webhook.send({ attachments }, err => {
+          if (err) Raven.captureException(err);
+        });
       });
     });
   })
-  .catch(error => {
-    console.error(error);
+  .catch(err => {
+    Raven.captureException(err);
   });
