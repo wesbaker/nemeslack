@@ -11,7 +11,7 @@
   "dependencies": {
     "@slack/client": "^4.1.0",
     "axios": "^0.18.0",
-    "dotenv": "^5.0.1",
+    "dotenv": "^6.0.0",
     "moment": "^2.22.0",
     "raven": "^2.4.2",
     "xmldoc": "^1.1.0"
