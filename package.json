@@ -30,7 +30,7 @@
   },
   "scripts": {
     "post": "node index.js",
-    "lint": "eslint ./src/",
+    "lint": "eslint ./lib/",
     "jest": "jest --coverage",
     "test": "node index.js --test; npm run lint; npm run jest",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
