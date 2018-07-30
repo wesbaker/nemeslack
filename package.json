@@ -34,5 +34,8 @@
     "jest": "jest --coverage",
     "test": "node index.js --test; npm run lint; npm run jest",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
