@@ -20,8 +20,8 @@
     "coveralls": "3.0.2",
     "eslint": "5.5.0",
     "eslint-plugin-jest": "21.22.0",
-    "jest": "23.5.0",
-    "jest-cli": "23.5.0",
+    "jest": "23.6.0",
+    "jest-cli": "23.6.0",
     "lodash": "4.17.10",
     "moxios": "0.4.0"
   },
