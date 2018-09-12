@@ -22,7 +22,7 @@
     "eslint-plugin-jest": "21.22.0",
     "jest": "23.6.0",
     "jest-cli": "23.6.0",
-    "lodash": "4.17.10",
+    "lodash": "4.17.11",
     "moxios": "0.4.0"
   },
   "engines": {
