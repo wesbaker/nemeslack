@@ -19,7 +19,7 @@
   "devDependencies": {
     "coveralls": "3.0.2",
     "eslint": "5.8.0",
-    "eslint-plugin-jest": "21.27.0",
+    "eslint-plugin-jest": "21.27.1",
     "jest": "23.6.0",
     "jest-cli": "23.6.0",
     "lodash": "4.17.11",
