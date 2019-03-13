@@ -26,27 +26,32 @@ Raven.config(process.env.SENTRY_DSN);
 const url = process.env.SLACK_WEBHOOK_URL;
 const webhook = new IncomingWebhook(url);
 
-axios
-  .get("https://nemestats.com/api/v2/PlayedGames/", {
-    params: {
-      gamingGroupId: process.env.GAMING_GROUP_ID,
-      datePlayedFrom: moment()
-        .subtract(1, "days")
-        .format("YYYY-MM-DD"),
-      datePlayedTo: moment()
-        .subtract(1, "days")
-        .format("YYYY-MM-DD")
-    }
-  })
-  .then(({ data: { playedGames } }) => {
-    playedGames.forEach(playData => {
-      getAttachments(playData).then(attachments => {
-        webhook.send({ attachments }, err => {
-          if (err) Raven.captureException(err);
+module.exports = (req, res) => {
+  axios
+    .get("https://nemestats.com/api/v2/PlayedGames/", {
+      params: {
+        gamingGroupId: process.env.GAMING_GROUP_ID,
+        datePlayedFrom: moment()
+          .subtract(1, "days")
+          .format("YYYY-MM-DD"),
+        datePlayedTo: moment()
+          .subtract(1, "days")
+          .format("YYYY-MM-DD")
+      }
+    })
+    .then(({ data: { playedGames } }) => {
+      playedGames.forEach(playData => {
+        getAttachments(playData).then(attachments => {
+          webhook.send({ attachments }, err => {
+            if (err) Raven.captureException(err);
+          });
         });
       });
+      res.end(`${playedGames.length} plays sent to Slack.`);
+    })
+    .catch(err => {
+      Raven.captureException(err);
+      res.statusCode = 404;
+      res.end(err.message);
     });
-  })
-  .catch(err => {
-    Raven.captureException(err);
-  });
+};
