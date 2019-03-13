@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [{ "src": "check.js", "use": "@now/node" }],
+  "env": {
+    "SLACK_WEBHOOK_URL": "@slack_webhook_url",
+    "SENTRY_DSN": "@sentry_dsn",
+    "GAMING_GROUP_ID": "12345"
+  }
+}

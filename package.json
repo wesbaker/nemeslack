@@ -1,7 +1,7 @@
 {
   "name": "nemeslack",
   "version": "1.0.5",
-  "main": "index.js",
+  "main": "check.js",
   "author": "Wes Baker <wes@wesbaker.com>",
   "license": "MIT",
   "repository": {
@@ -28,10 +28,10 @@
     "node": "8.x"
   },
   "scripts": {
-    "post": "node index.js",
+    "post": "node check.js",
     "lint": "eslint ./lib/",
     "jest": "jest --coverage",
-    "test": "node index.js --test; npm run lint; npm run jest"
+    "test": "node check.js --test; npm run lint; npm run jest"
   },
   "jest": {
     "testEnvironment": "node"
