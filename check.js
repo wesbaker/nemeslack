@@ -2,7 +2,9 @@ require("dotenv").config();
 
 const IncomingWebhook = require("@slack/client").IncomingWebhook;
 const axios = require("axios");
-const moment = require("moment");
+
+const format = require("date-fns/format");
+const subDays = require("date-fns/sub_days");
 const getAttachments = require("./lib/Play").getAttachments;
 
 const testRun = process.argv.includes("--test");
@@ -31,12 +33,8 @@ module.exports = (req, res) => {
     .get("https://nemestats.com/api/v2/PlayedGames/", {
       params: {
         gamingGroupId: process.env.GAMING_GROUP_ID,
-        datePlayedFrom: moment()
-          .subtract(1, "days")
-          .format("YYYY-MM-DD"),
-        datePlayedTo: moment()
-          .subtract(1, "days")
-          .format("YYYY-MM-DD")
+        datePlayedFrom: format(subDays(new Date(), 1), "YYYY-MM-DD"),
+        datePlayedTo: format(subDays(new Date(), 1), "YYYY-MM-DD")
       }
     })
     .then(({ data: { playedGames } }) => {
@@ -44,10 +42,10 @@ module.exports = (req, res) => {
         getAttachments(playData).then(attachments => {
           webhook.send({ attachments }, err => {
             if (err) Raven.captureException(err);
+            res.end(`${playedGames.length} plays sent to Slack.`);
           });
         });
       });
-      res.end(`${playedGames.length} plays sent to Slack.`);
     })
     .catch(err => {
       Raven.captureException(err);
