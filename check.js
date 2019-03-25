@@ -43,7 +43,7 @@ module.exports = async (req, res) => {
     .then(({ data: { playedGames } }) => {
       const promises = playedGames.map(playData => {
         return getAttachments(playData).then(attachments => {
-          webhook.send({ attachments }, err => {
+          return webhook.send({ attachments }, err => {
             if (err) Raven.captureException(err);
           });
         });
