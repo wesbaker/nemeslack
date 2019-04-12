@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const IncomingWebhook = require("@slack/client").IncomingWebhook;
+const { IncomingWebhook } = require("@slack/webhook");
 const axios = require("axios");
 
 const format = require("date-fns/format");
@@ -43,8 +43,8 @@ module.exports = async (req, res) => {
     .then(({ data: { playedGames } }) => {
       const promises = playedGames.map(playData => {
         return getAttachments(playData).then(attachments => {
-          return webhook.send({ attachments }, err => {
-            if (err) Raven.captureException(err);
+          return webhook.send({ attachments }).catch(err => {
+            Raven.captureException(err);
           });
         });
       });
