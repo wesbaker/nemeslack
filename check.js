@@ -4,7 +4,7 @@ const { IncomingWebhook } = require("@slack/webhook");
 const axios = require("axios");
 
 const format = require("date-fns/format");
-const subDays = require("date-fns/sub_days");
+const subDays = require("date-fns/subDays");
 const getAttachments = require("./lib/Play").getAttachments;
 
 const testRun = process.argv.includes("--test");
@@ -36,8 +36,8 @@ module.exports = async (req, res) => {
     .get("https://nemestats.com/api/v2/PlayedGames/", {
       params: {
         gamingGroupId: process.env.GAMING_GROUP_ID,
-        datePlayedFrom: format(subDays(new Date(), 1), "YYYY-MM-DD"),
-        datePlayedTo: format(subDays(new Date(), 1), "YYYY-MM-DD")
+        datePlayedFrom: format(subDays(new Date(), 1), "yyyy-MM-dd"),
+        datePlayedTo: format(subDays(new Date(), 1), "yyyy-MM-dd")
       }
     })
     .then(({ data: { playedGames } }) => {
