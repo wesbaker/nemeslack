@@ -19,8 +19,8 @@
   "devDependencies": {
     "eslint": "6.8.0",
     "eslint-plugin-jest": "23.8.2",
-    "jest": "25.2.0",
-    "jest-cli": "25.2.0",
+    "jest": "25.2.1",
+    "jest-cli": "25.2.1",
     "lodash": "4.17.15",
     "moxios": "0.4.0"
   },
