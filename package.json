@@ -31,7 +31,7 @@
     "post": "node check.js",
     "lint": "eslint ./lib/",
     "jest": "jest --coverage",
-    "test": "node check.js --test; npm run lint; npm run jest"
+    "test": "node check.js --test && npm run lint && npm run jest"
   },
   "jest": {
     "testEnvironment": "node"
