@@ -17,7 +17,7 @@
     "xmldoc": "^1.1.0"
   },
   "devDependencies": {
-    "eslint": "7.5.0",
+    "eslint": "7.6.0",
     "eslint-plugin-jest": "23.20.0",
     "jest": "26.2.2",
     "jest-cli": "26.2.2",
