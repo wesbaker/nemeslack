@@ -17,12 +17,20 @@
     "xmldoc": "^1.1.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-typescript": "^7.12.7",
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/jest": "^26.0.19",
+    "@types/lodash": "^4.14.167",
+    "@types/xmldoc": "^1.1.5",
+    "@vercel/node": "^1.8.5",
     "eslint": "6.8.0",
     "eslint-plugin-jest": "23.8.2",
     "jest": "25.4.0",
     "jest-cli": "25.4.0",
     "lodash": "4.17.15",
-    "moxios": "0.4.0"
+    "moxios": "0.4.0",
+    "msw": "^0.25.0"
   },
   "engines": {
     "node": "10.20.1"
