@@ -2,6 +2,7 @@ import format from "date-fns/format";
 import parseISO from "date-fns/parseISO";
 import xmldoc from "xmldoc";
 import axios from "axios";
+import { MessageAttachment } from "@slack/types";
 
 export interface Player {
   pointsScored: number | null;
@@ -17,10 +18,16 @@ export interface Play {
   datePlayed: string;
 }
 
+interface SlackField {
+  title: string;
+  value: string;
+  short: boolean;
+}
+
 export const getUrl = (gameId: number): string =>
   `https://nemestats.com/PlayedGame/Details/${gameId}`;
 
-export const createPlayers = (players: Player[]) => {
+export const createPlayers = (players: Player[]): SlackField => {
   // Check to make sure _someone_ scored points
   const points = players.some(
     (player) => player.pointsScored !== null && player.pointsScored !== 0
@@ -36,22 +43,25 @@ export const createPlayers = (players: Player[]) => {
   return { title: "Players", value: names.join(", "), short: true };
 };
 
-export const getThumbnail = (bggId: number): Promise<string | void> => {
+export const getThumbnail = (bggId: number): Promise<string | undefined> => {
   return axios
     .get("https://www.boardgamegeek.com/xmlapi2/thing", {
       params: { id: bggId },
     })
     .then((response) => {
       const document = new xmldoc.XmlDocument(response.data);
-      return document.valueWithPath("item.thumbnail") || "";
+      return document.valueWithPath("item.thumbnail") || undefined;
     })
-    .catch((err) => console.error(err));
+    .catch((err) => {
+      console.error(err);
+      return undefined;
+    });
 };
 
 export const createAttachment = (
   play: Play,
-  thumbUrl: string | void
-): object[] => {
+  thumbUrl: string | undefined
+): MessageAttachment[] => {
   const date = format(parseISO(play.datePlayed), "EEEE, MMMM do yyyy");
   return [
     {
@@ -66,10 +76,9 @@ export const createAttachment = (
   ];
 };
 
-export const getAttachments = (playData: Play) => {
-  return getThumbnail(playData.boardGameGeekGameDefinitionId).then(
-    (thumbUrl) => {
-      return createAttachment(playData, thumbUrl);
-    }
-  );
+export const getAttachments = async (
+  playData: Play
+): Promise<MessageAttachment[]> => {
+  const thumbUrl = await getThumbnail(playData.boardGameGeekGameDefinitionId);
+  return createAttachment(playData, thumbUrl);
 };

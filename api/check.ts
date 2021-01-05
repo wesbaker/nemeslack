@@ -2,35 +2,17 @@ import "dotenv/config";
 import axios from "axios";
 import format from "date-fns/format";
 import subDays from "date-fns/subDays";
+import Raven from "raven";
 import { IncomingWebhook } from "@slack/webhook";
 import { NowRequest, NowResponse } from "@vercel/node";
 import { getAttachments, Play } from "../lib/Play";
 
-const testRun = process.argv.includes("--test");
-if (testRun) {
-  if (typeof IncomingWebhook !== "function") {
-    console.error("@slack/client was not loaded.");
-  }
-  if (typeof axios !== "function") {
-    console.error("axios was not loaded.");
-  }
-  if (typeof format !== "function") {
-    console.error("format was not loaded.");
-  }
-  if (typeof subDays !== "function") {
-    console.error("subDays was not loaded.");
-  }
-  console.log("Debug: Nemeslack would post now.");
-  process.exit(0);
-}
-
-const Raven = require("raven");
 Raven.config(process.env.SENTRY_DSN);
 
 const url = process.env.SLACK_WEBHOOK_URL || "";
 const webhook = new IncomingWebhook(url);
 
-export default async (req: NowRequest, res: NowResponse) => {
+export default async (req: NowRequest, res: NowResponse): Promise<void> => {
   await axios
     .get("https://nemestats.com/api/v2/PlayedGames/", {
       params: {

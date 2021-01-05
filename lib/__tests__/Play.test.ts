@@ -1,3 +1,4 @@
+import { jest } from "@jest/globals";
 import * as Play from "../Play";
 import { cloneDeep } from "lodash";
 import { rest } from "msw";
@@ -90,7 +91,7 @@ describe("Play", () => {
     });
 
     test("returns tied players", () => {
-      let testPlayers = cloneDeep(players);
+      const testPlayers = cloneDeep(players);
       testPlayers[1]["gameRank"] = 1;
       testPlayers[1]["pointsScored"] = 10;
       expect(Play.createPlayers(testPlayers)).toEqual({
@@ -114,7 +115,7 @@ describe("Play", () => {
     });
 
     test("returns 0 for a null score when at least one player has a score", () => {
-      let testPlayers = cloneDeep(players);
+      const testPlayers = cloneDeep(players);
       testPlayers[2]["pointsScored"] = null;
       testPlayers[3]["pointsScored"] = null;
       expect(Play.createPlayers(testPlayers)).toEqual({
@@ -156,14 +157,15 @@ describe("Play", () => {
     });
 
     test("returns an error for an invalid URL", async () => {
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       jest.spyOn(console, "error").mockImplementation(() => {});
       await Play.getThumbnail(0);
       expect(console.error).toHaveBeenCalled();
     });
 
-    test("returns blank string if no thumbnail value exists", async () => {
+    test("returns undefined if no thumbnail value exists", async () => {
       const url = await Play.getThumbnail(654321);
-      expect(url).toBe("");
+      expect(url).toBe(undefined);
     });
   });
 
