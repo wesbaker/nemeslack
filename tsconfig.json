@@ -1,0 +1,14 @@
+{
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [
+    "api/**/*",
+    "lib/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.test.(j|t)s"
+  ]
+}
