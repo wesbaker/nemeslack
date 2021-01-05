@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "builds": [{ "src": "check.js", "use": "@now/node" }],
   "env": {
     "SLACK_WEBHOOK_URL": "@nemeslack_slack_webhook_url",
     "SENTRY_DSN": "@nemeslack_sentry_dsn",
