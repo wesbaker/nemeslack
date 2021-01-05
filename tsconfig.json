@@ -1,5 +1,8 @@
 {
   "extends": "@tsconfig/recommended/tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
   "include": [
     "api/**/*",
     "lib/**/*"
