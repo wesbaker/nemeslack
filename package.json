@@ -47,10 +47,5 @@
   },
   "jest": {
     "testEnvironment": "node"
-  },
-  "renovate": {
-    "extends": [
-      "github>wesbaker/renovate-config"
-    ]
   }
 }
