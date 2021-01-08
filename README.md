@@ -1,7 +1,7 @@
 # Nemeslack
 
-[![CircleCI](https://circleci.com/gh/wesbaker/nemeslack.svg?style=svg)](https://circleci.com/gh/wesbaker/nemeslack)
-[![Code Climate](https://codeclimate.com/github/wesbaker/nemeslack/badges/gpa.svg)](https://codeclimate.com/github/wesbaker/nemeslack)
+![Test Workflow](https://github.com/wesbaker/nemeslack/workflows/Test/badge.svg)
+![CodeQL Workflow](https://github.com/wesbaker/nemeslack/workflows/CodeQL/badge.svg)
 
 A simple way to send [Nemestats][nemestats] plays to Slack:
 
