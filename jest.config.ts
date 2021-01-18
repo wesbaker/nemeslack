@@ -1,7 +1,7 @@
 import type { Config } from "@jest/types";
 
 const config: Config.InitialOptions = {
-  testEnvironment: "node",
+  coverageDirectory: "./coverage/",
   coverageThreshold: {
     global: {
       branches: 100,
@@ -10,7 +10,12 @@ const config: Config.InitialOptions = {
       statements: 100,
     },
   },
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  testEnvironment: "node",
   testPathIgnorePatterns: ["/node_modules/", "jest.config.ts"],
+  transform: {
+    "^.+\\.(ts|tsx)$": "ts-jest",
+  },
 };
 
 export default config;
