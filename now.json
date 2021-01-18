@@ -1,11 +1,9 @@
 {
   "version": 2,
   "env": {
-    "SLACK_WEBHOOK_URL": "@nemeslack_slack_webhook_url",
-    "SENTRY_DSN": "@nemeslack_sentry_dsn",
+    "SLACK_WEBHOOK_URL": "@nemeslack-slack-webhook-url",
+    "SENTRY_DSN": "@nemeslack-sentry-dsn",
     "GAMING_GROUP_ID": "13468"
   },
-  "alias": [
-    "nemeslack"
-  ]
+  "alias": ["nemeslack"]
 }
