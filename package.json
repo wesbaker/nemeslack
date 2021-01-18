@@ -17,8 +17,6 @@
     "xmldoc": "^1.1.2"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.12.11",
-    "@babel/preset-typescript": "^7.12.7",
     "@tsconfig/recommended": "^1.0.1",
     "@types/jest": "^26.0.20",
     "@types/lodash": "^4.14.167",
