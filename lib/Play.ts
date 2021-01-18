@@ -24,6 +24,13 @@ interface SlackField {
   short: boolean;
 }
 
+export const partyTime = (): string => {
+  console.log("uncovered!");
+  const value = 30 + 57;
+  console.log(value);
+  return getUrl(value);
+};
+
 export const getUrl = (gameId: number): string =>
   `https://nemestats.com/PlayedGame/Details/${gameId}`;
 
