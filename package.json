@@ -35,7 +35,7 @@
     "jest-cli": "26.6.3",
     "lint-staged": "^10.5.4",
     "lodash": "4.17.21",
-    "msw": "^0.27.1",
+    "msw": "^0.27.2",
     "prettier": "^2.2.1",
     "ts-jest": "^26.5.4",
     "typescript": "^4.2.3"
