@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
-    "@types/jest": "^26.0.24",
+    "@types/jest": "^27.0.0",
     "@types/lodash": "^4.14.172",
     "@types/raven": "^2.5.4",
     "@types/xmldoc": "^1.1.6",
