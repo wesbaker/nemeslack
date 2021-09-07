@@ -24,7 +24,7 @@
     "@types/raven": "^2.5.4",
     "@types/xmldoc": "^1.1.6",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
-    "@typescript-eslint/parser": "^4.30.0",
+    "@typescript-eslint/parser": "^4.31.0",
     "@vercel/node": "^1.12.1",
     "eslint": "7.32.0",
     "eslint-plugin-jest": "24.4.0",
