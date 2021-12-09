@@ -20,7 +20,7 @@
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
     "@types/jest": "^27.0.3",
-    "@types/lodash": "^4.14.177",
+    "@types/lodash": "^4.14.178",
     "@types/raven": "^2.5.4",
     "@types/xmldoc": "^1.1.6",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
